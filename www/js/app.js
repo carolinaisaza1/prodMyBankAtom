@@ -4,9 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-
-angular.module('starter', ['ionic','ionic.service.core','firebase','starter.controllers','starter.services','ngCordova'])
-
+angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,27 +36,16 @@ angular.module('starter', ['ionic','ionic.service.core','firebase','starter.cont
       url: '/main',
       views: {
         'menuContent': {
-          templateUrl: 'templates/main.html',
-          controller: 'ProductsController'
+          templateUrl: 'templates/main.html'
         }
       }
     })
 
   .state('login', {
       url: '/login',
-      controller: 'AppCtrl',
       templateUrl: 'templates/login.html'
     })
 
-  .state('app.ejecutivo', {
-      url: '/ejecutivo',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/ejecutivo.html',
-          controller: 'EjecutivoController'
-        }
-      }
-    })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });
